@@ -1,0 +1,1 @@
+Ruby on Rails를 활용하여 이미지 올리기

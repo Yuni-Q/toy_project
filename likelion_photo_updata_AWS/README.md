@@ -1,0 +1,1 @@
+Ruby on Rails를 활용하여 AWS에 파일 올리기

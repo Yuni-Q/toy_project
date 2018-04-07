@@ -1,0 +1,19 @@
+<div class ="container">
+<h1>정상적으로 전송 되었습니다.</h1>
+<h2>이메일 제목은</h2>
+<%= @one %>
+<h2>받는 사람은</h2>
+<%= @two %>
+<h2>내용은</h2>
+<%= @three %>
+<p>
+    <a href='/'>메인으로 가기</a>
+
+<h1>지난 이메일들</h1>
+<% @every_email.each do |e| %>
+    <%= e.title %> <br>
+    <%= e.content %> <br>
+    <%= e.receiver %> <br>
+    <%= e.created_at %> <br>
+    <hr>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>게시판</h1>
+<% @every_post.each do |p| %>
+    <form action="/destroy" method="get">
+        <input type="hidden" name="id" value="<%= p.id %>">
+        제목 : <%= p.title %> <br>
+        내용 : <%= p.content %> <br>
+        <a href="/update?id=<%= p.id %>">수정하러 가기</a>
+        <input type="submit" value="삭제">
+    </form>
+    <hr> 
+<% end %>
+<h1><a href="/write">글쓰러 가기</a></h1>

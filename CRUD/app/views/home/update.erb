@@ -1,0 +1,11 @@
+<h1>수정하기</h1>
+<form action="/change" method="get">
+            <input type="hidden" name="id" class="id" value="<%= @id %>">
+            <input type="text" name="title" class="title" value="<%= @title %>">
+            <br>
+            <br>
+            <input type="text" name="content" class="content" value="<%= @content %>">
+            <br>
+            <br>
+            <input type="submit" value="전송" />
+</form>
