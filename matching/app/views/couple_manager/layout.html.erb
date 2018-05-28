@@ -1,0 +1,73 @@
+<!-- 생성자에서 Male, Female 인스턴스를 각각 한개씩 받아서 클래스 내 프로퍼티로 초기화(Female,Male 순서로도 초기화 가능해야함) -->
+<%= link_to "이름", "/couple_manager/name/#{@one.id}?two=#{@two.id}"%>
+<%= link_to "생년월일", "/couple_manager/birthday/#{@one.id}?two=#{@two.id}"%>
+<%= link_to "키", "/couple_manager/height/#{@one.id}?two=#{@two.id}"%>
+<%= link_to "직업", "/couple_manager/job/#{@one.id}?two=#{@two.id}"%>
+<%= link_to "위치", "/couple_manager/location/#{@one.id}?two=#{@two.id}"%>
+<%= link_to "취미", "/couple_manager/hobbys/#{@one.id}?two=#{@two.id}"%>
+<%= link_to "male", "/couple_manager/male/#{@one.id}?two=#{@two.id}"%>
+<%= link_to "female", "/couple_manager/female/#{@one.id}?two=#{@two.id}"%>
+
+<hr>
+
+<!-- 기본 정보 표시 -->
+
+<%= @one.name %> <br>
+<%= @one.birthday %> <br>
+<%= @one.height %> <br>
+<%= @one.job %> <br>
+<%= @one.location %> <br>
+<%= @one.hobbys %> <br>
+<% if @one == @male %>
+	<%= @one.is_fulfilled %> <hr>
+<% end %>	
+<%= @two.name %> <br>
+<%= @two.birthday %> <br>
+<%= @two.height %> <br>
+<%= @two.job %> <br>
+<%= @two.location %> <br>
+<%= @two.hobbys %> <br>
+<% if @two == @male %>
+	<%= @two.is_fulfilled %> <hr>
+<% end %>
+<hr>
+
+<!-- 계산한 정보 표시 -->
+
+<!-- 기능 1 -->
+<% if  @age < 0 %>
+	<%= @two.name %>님은 <%= @age.abs %>살 연하 입니다.
+<% elsif @age > 0 %>
+	<%= @two.name %>님은 <%=@age %>살 연상 입니다. 
+<% else %>
+	<%= @two.name %>님과 당신은 동갑입니다.
+<% end %>
+
+<br>
+
+<!-- 기능 2 -->
+<%if @distance < 5 %>
+	<%= @two.name %>님은 5km 이내에 위치하고 있습니다.
+<% else %>
+	<%= @two.name %>님은 <%= @distance %>km 거리에 위치하고 있습니다.
+<% end %>
+
+<br>
+
+<!-- 기능 3 -->
+<% if @count > 0 %>
+	<%= @two.name %>님은 당신과 취미가 <%= @count %>개 일치 합니다.
+<% else %>
+	<%= @two.name %>님과 일치하는 취미가 없습니다.
+<% end %>
+
+<br>
+
+<!--  기능 4 -->
+<% if @two == @male %>
+	<% if @two.is_fulfilled == true %>
+		<%= @two.name %>님은 군필자 입니다.
+	<% else %>
+		<%= @two.name %>님은 미필자 입니다.
+	<% end %> 
+<% end %>

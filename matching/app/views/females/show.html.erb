@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @female.name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @female.birthday %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @female.height %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @female.job %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @female.location %>
+</p>
+
+<p>
+  <strong>Hobbys:</strong>
+  <%= @female.hobbys %>
+</p>
+
+<%= link_to 'Edit', edit_female_path(@female) %> |
+<%= link_to 'Back', females_path %>

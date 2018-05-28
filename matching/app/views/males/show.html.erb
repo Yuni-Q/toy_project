@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @male.name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @male.birthday %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @male.height %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @male.job %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @male.location %>
+</p>
+
+<p>
+  <strong>Hobbys:</strong>
+  <%= @male.hobbys %>
+</p>
+
+<p>
+  <strong>Is fulfilled:</strong>
+  <%= @male.is_fulfilled %>
+</p>
+
+<%= link_to 'Edit', edit_male_path(@male) %> |
+<%= link_to 'Back', males_path %>
